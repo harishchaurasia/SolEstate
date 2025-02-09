@@ -1,12 +1,15 @@
 "use client";
 
-import React from "react";
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import SignUp from "@/components/signup/signup";
 
 const LandingPage = () => {
+  const router = useRouter();
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-900 via-purple-800 to-indigo-900 text-white flex flex-col items-center justify-center px-6">
+    <div className="min-h-screen bg-gradient-to-br from-[#ef8508] via-[#b5593d] to-[#323232] text-white flex flex-col items-center justify-center px-6">
       <motion.h2
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -24,6 +27,7 @@ const LandingPage = () => {
       >
         Decentralized Investment Marketplace
       </motion.h1>
+
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -37,7 +41,11 @@ const LandingPage = () => {
         <Button className="bg-indigo-500 hover:bg-indigo-600 px-6 py-3 rounded-xl text-lg font-semibold shadow-lg">
           Get Started
         </Button>
-        <Button className="bg-transparent border border-white px-6 py-3 rounded-xl text-lg font-semibold hover:bg-white hover:text-indigo-900 shadow-lg">
+
+        <Button
+          className="bg-transparent border border-white px-6 py-3 rounded-xl text-lg font-semibold hover:bg-white hover:text-indigo-900 shadow-lg"
+          onClick={() => router.push("/signup")}
+        >
           Learn More
         </Button>
       </div>
