@@ -1,8 +1,7 @@
 "use client";
 
-import { Sign } from "crypto";
-
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faUser,
@@ -13,6 +12,12 @@ import {
 
 const AuthPage = () => {
   const [isLogin, setIsLogin] = useState(false);
+  const router = useRouter();
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    router.push("/kyc"); // Redirects to KYC page
+  };
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-indigo-900">
@@ -20,7 +25,7 @@ const AuthPage = () => {
         <h2 className="text-2xl font-semibold text-center text-purple-800">
           {isLogin ? "Login" : "Sign Up"}
         </h2>
-        <form className="mt-6 space-y-4">
+        <form className="mt-6 space-y-4" onSubmit={handleSubmit}>
           {!isLogin && (
             <div className="relative">
               <FontAwesomeIcon
@@ -31,6 +36,7 @@ const AuthPage = () => {
                 type="text"
                 placeholder="Full Name"
                 className="w-full pl-10 p-3 rounded-md bg-gray-800 text-white focus:outline-none"
+                required
               />
             </div>
           )}
@@ -43,6 +49,7 @@ const AuthPage = () => {
               type="email"
               placeholder="Email"
               className="w-full pl-10 p-3 rounded-md bg-gray-800 text-white focus:outline-none"
+              required
             />
           </div>
           {!isLogin && (
@@ -56,6 +63,7 @@ const AuthPage = () => {
                   type="tel"
                   placeholder="Phone Number"
                   className="w-full pl-10 p-3 rounded-md bg-gray-800 text-white focus:outline-none"
+                  required
                 />
               </div>
               <div className="relative">
@@ -67,16 +75,16 @@ const AuthPage = () => {
                   type="text"
                   placeholder="Country"
                   className="w-full pl-10 p-3 rounded-md bg-gray-800 text-white focus:outline-none"
+                  required
                 />
               </div>
             </>
           )}
-          <button className="w-full p-3 bg-purple-800 hover:bg-purple-700 rounded-md">
+          <button
+            type="submit"
+            className="w-full p-3 bg-purple-800 hover:bg-purple-700 rounded-md"
+          >
             {isLogin ? "Login" : "Sign Up"}
-          </button>
-          <button className="w-full p-3 bg-gray-700 hover:bg-gray-600 rounded-md flex items-center justify-center">
-            <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
-            Continue with Email
           </button>
         </form>
         <p className="mt-4 text-center">
