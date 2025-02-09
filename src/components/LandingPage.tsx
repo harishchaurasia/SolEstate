@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import SignUp from "@/components/signup/signup";
+import SignUp from "@/app/signup/page";
 
 const LandingPage = () => {
   const router = useRouter();
