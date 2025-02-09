@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Sidebar from "@/components/Sidebar";
 import LoanCard from "@/components/card";
+import NavBar from "@/components/NavBar";
 
 export default function Dashboard() {
   const [activeTab, setActiveTab] = useState("browse_loans");
@@ -14,7 +15,7 @@ export default function Dashboard() {
       name: "Harish Chaurasia",
       loanAmount: "$100,000",
       interestRate: "12% APR",
-      duration: "1 Years",
+      duration: "1 Year",
       description: "Reliable real estate funding for large-scale projects.",
     },
     {
@@ -39,7 +40,7 @@ export default function Dashboard() {
       loanAmount: "$50,000",
       interestRate: "5.2% APR",
       duration: "5 Years",
-      description: "Luxury real estate funding for commericial projects.",
+      description: "Luxury real estate funding for commercial projects.",
     },
     {
       imageUrl: "/assets/4.jpg",
@@ -65,17 +66,25 @@ export default function Dashboard() {
       <Sidebar setActiveTab={setActiveTab} />
 
       {/* Main Content */}
-      <div className="flex-1 p-8 ml-64">
-        <h1 className="text-3xl font-bold text-gray-800">Browse Loan Offers</h1>
-        <p className="text-gray-600 mt-2">
-          Find the best loan offers that match your needs.
-        </p>
+      <div className="flex-1 flex flex-col">
+        {/* Navbar Fixed */}
+        <NavBar />
 
-        {/* Loan Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10">
-          {loanOffers.map((loan, index) => (
-            <LoanCard key={index} {...loan} />
-          ))}
+        {/* Content Below Navbar */}
+        <div className="p-8 pt-16 ml-64">
+          <h1 className="text-3xl font-bold text-gray-800">
+            Browse Loan Offers
+          </h1>
+          <p className="text-gray-600 mt-2">
+            Find the best loan offers that match your needs.
+          </p>
+
+          {/* Loan Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10">
+            {loanOffers.map((loan, index) => (
+              <LoanCard key={index} {...loan} />
+            ))}
+          </div>
         </div>
       </div>
     </div>
