@@ -38,7 +38,10 @@ const LandingPage = () => {
       </motion.p>
 
       <div className="mt-6 flex space-x-4">
-        <Button className="bg-indigo-500 hover:bg-indigo-600 px-6 py-3 rounded-xl text-lg font-semibold shadow-lg text-black">
+        <Button
+          className="bg-indigo-500 hover:bg-indigo-600 px-6 py-3 rounded-xl text-lg font-semibold shadow-lg text-black"
+          onClick={() => router.push("/dashboard")}
+        >
           Get Started
         </Button>
 
