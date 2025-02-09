@@ -5,7 +5,11 @@ const NavBar = () => {
     <nav className="bg-[#100c08] text-white p-4 shadow-lg">
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo / Title */}
-        <h1 className="text-xl font-bold font-San Serif">SolEstate</h1>
+        <h1 className="text-xl font-bold font-San Serif">
+          <Link href="/" className=" hover:text-orange-400">
+            SolEstate
+          </Link>
+        </h1>
 
         {/* Navigation Links */}
         <div className="space-x-6">
@@ -19,7 +23,7 @@ const NavBar = () => {
             Login
           </Link>
           <Link href="/kyc" className="hover:text-purple-300">
-            Verification
+            KYC
           </Link>
         </div>
       </div>

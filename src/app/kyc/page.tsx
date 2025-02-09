@@ -3,6 +3,7 @@
 import { useState, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import NavBar from "@/components/NavBar";
+import { useRouter } from "next/navigation";
 
 import {
   faIdCard,
@@ -42,10 +43,12 @@ const VerificationPage = () => {
     setCapturedPhoto(imageSrc || null);
   };
 
+  const router = useRouter();
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log(formData);
     console.log(idPhoto, incomeStatement, bankStatement, capturedPhoto);
+    router.push("/review");
   };
   return (
     <div>
