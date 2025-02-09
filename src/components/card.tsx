@@ -1,4 +1,6 @@
 import Image from "next/image";
+// import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 interface LoanCardProps {
   imageUrl: string;
@@ -17,6 +19,12 @@ const LoanCard: React.FC<LoanCardProps> = ({
   duration,
   description,
 }) => {
+  const router = useRouter();
+
+  const handleSelect = () => {
+    router.push("/agreementupload");
+  };
+
   return (
     <div className="bg-gradient-to-br from-[#ef8508] via-[#b5593d] to-[#323232] text-white rounded-xl p-6 shadow-lg w-full max-w-sm">
       {/* Image */}
@@ -51,7 +59,10 @@ const LoanCard: React.FC<LoanCardProps> = ({
 
       {/* Apply Button */}
       <div className="mt-6 text-center">
-        <button className="px-6 py-2 mx-4 my-4 bg-white text-black font-semibold rounded-lg shadow-md hover:bg-gray-900 hover:text-white">
+        <button
+          onClick={handleSelect}
+          className="px-6 py-2 mx-4 my-4 bg-white text-black font-semibold rounded-lg shadow-md hover:bg-gray-900 hover:text-white"
+        >
           Select
         </button>
         <button className="px-6 py-2 bg-gray-500 text-black font-semibold rounded-lg shadow-md hover:bg-gray-200">

@@ -24,7 +24,7 @@ const AuthPage = () => {
     <div>
       {/* {" "} */}
       <NavBar />
-      <div className="flex justify-center items-center min-h-screen bg-gradient-to-br from-[#ef8508] via-[#b5593d] to-[#323232] mt-4">
+      <div className="flex justify-center items-center min-h-screen bg-gradient-to-br from-[#ef8508] via-[#b5593d] to-[#323232]">
         <div className="w-full max-w-md bg-gradient-to-br from-[#323232] via-[#b5593d] to-[#ef8508] text-white p-8 rounded-lg shadow-lg">
           <h2 className="text-2xl font-semibold text-center text-white">
             {isLogin ? "Login" : "Sign Up"}
