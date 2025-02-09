@@ -9,12 +9,14 @@ import {
   faCog,
   faSignOutAlt,
 } from "@fortawesome/free-solid-svg-icons";
+import { useRouter } from "next/navigation";
 
 interface SidebarProps {
   setActiveTab: (tab: string) => void;
 }
 
 const Sidebar = ({ setActiveTab }: SidebarProps) => {
+  const router = useRouter();
   return (
     <div className="h-screen w-64 bg-gradient-to-br from-[#ef8508] via-[#b5593d] to-[#323232] text-white flex flex-col p-4 shadow-lg fixed">
       <h2 className="text-2xl font-bold text-center mb-10">Dashboard</h2>
@@ -22,7 +24,7 @@ const Sidebar = ({ setActiveTab }: SidebarProps) => {
       <nav className="space-y-4">
         <button
           onClick={() => setActiveTab("loan_offers")}
-          className="flex items-center space-x-3 w-full p-3 rounded hover:bg-purple-700"
+          className="flex items-center space-x-3 w-full p-3 rounded hover:bg-gray-600"
         >
           <FontAwesomeIcon icon={faBuilding} />
           <span>Loan Offers</span>
@@ -30,7 +32,7 @@ const Sidebar = ({ setActiveTab }: SidebarProps) => {
 
         <button
           onClick={() => setActiveTab("browse_loans")}
-          className="flex items-center space-x-3 w-full p-3 rounded hover:bg-purple-700"
+          className="flex items-center space-x-3 w-full p-3 rounded hover:bg-gray-600"
         >
           <FontAwesomeIcon icon={faBuilding} />
           <span>Browse Loans</span>
@@ -38,7 +40,7 @@ const Sidebar = ({ setActiveTab }: SidebarProps) => {
 
         <button
           onClick={() => setActiveTab("wallet")}
-          className="flex items-center space-x-3 w-full p-3 rounded hover:bg-purple-700"
+          className="flex items-center space-x-3 w-full p-3 rounded hover:bg-gray-600"
         >
           <FontAwesomeIcon icon={faWallet} />
           <span>Wallet</span>
@@ -46,14 +48,15 @@ const Sidebar = ({ setActiveTab }: SidebarProps) => {
 
         <button
           onClick={() => setActiveTab("investment_portfolio")}
-          className="flex items-center space-x-3 w-full p-3 rounded hover:bg-purple-700"
+          className="flex items-center space-x-3 w-full p-3 rounded hover:bg-gray-600"
         >
           <FontAwesomeIcon icon={faBuilding} />
           <span>Investment Portfolio</span>
         </button>
         <button
-          onClick={() => setActiveTab("emi_payments")}
-          className="flex items-center space-x-3 w-full p-3 rounded hover:bg-purple-700"
+          // onClick={() => setActiveTab("emi_payments")}
+          onClick={() => router.push("/makepayment")}
+          className="flex items-center space-x-3 w-full p-3 rounded hover:bg-gray-600"
         >
           <FontAwesomeIcon icon={faFileInvoice} />
           <span>EMI Payments</span>
@@ -61,7 +64,7 @@ const Sidebar = ({ setActiveTab }: SidebarProps) => {
 
         <button
           onClick={() => setActiveTab("settings")}
-          className="flex items-center space-x-3 w-full p-3 rounded hover:bg-purple-700"
+          className="flex items-center space-x-3 w-full p-3 rounded hover:bg-gray-600"
         >
           <FontAwesomeIcon icon={faCog} />
           <span>Settings</span>
@@ -69,7 +72,7 @@ const Sidebar = ({ setActiveTab }: SidebarProps) => {
 
         <button
           onClick={() => setActiveTab("support")}
-          className="flex items-center space-x-3 w-full p-3 rounded hover:bg-purple-700"
+          className="flex items-center space-x-3 w-full p-3 rounded hover:bg-gray-600"
         >
           <FontAwesomeIcon icon={faQuestionCircle} />
           <span>Support</span>
