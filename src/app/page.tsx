@@ -1,11 +1,10 @@
-import Image from "next/image";
+import NavBar from "@/components/NavBar";
 import LandingPage from "@/components/LandingPage";
-import ConnectWalletButton from "@/components/ConnectWalletButton";
-import SignUp from "@/app/signup/page";
 
 export default function Home() {
   return (
     <div>
+      <NavBar />
       <LandingPage />
     </div>
   );

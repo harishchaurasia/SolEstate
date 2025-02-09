@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -44,9 +46,9 @@ const VerificationPage = () => {
     console.log(idPhoto, incomeStatement, bankStatement, capturedPhoto);
   };
   return (
-    <div className="min-h-screen flex items-center justify-center bg-indigo-900">
-      <div className="w-full max-w-xl bg-blue-900 text-white p-8 rounded-lg shadow-lg">
-        <h2 className="text-2xl font-bold text-center text-purple-800">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#ef8508] via-[#b5593d] to-[#323232]">
+      <div className="w-full max-w-xl bg-gradient-to-br from-[#323232] via-[#b5593d] to-[#ef8508] text-white p-8 rounded-lg shadow-lg">
+        <h2 className="text-2xl font-bold text-center text-white">
           Verification Form
         </h2>
         <form className="mt-6 space-y-4" onSubmit={handleSubmit}>

@@ -20,9 +20,9 @@ const AuthPage = () => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-indigo-900">
-      <div className="w-full max-w-md bg-blue-900 text-white p-8 rounded-lg shadow-lg">
-        <h2 className="text-2xl font-semibold text-center text-purple-800">
+    <div className="flex justify-center items-center min-h-screen bg-gradient-to-br from-[#ef8508] via-[#b5593d] to-[#323232]">
+      <div className="w-full max-w-md bg-gradient-to-br from-[#323232] via-[#b5593d] to-[#ef8508] text-white p-8 rounded-lg shadow-lg">
+        <h2 className="text-2xl font-semibold text-center text-white">
           {isLogin ? "Login" : "Sign Up"}
         </h2>
         <form className="mt-6 space-y-4" onSubmit={handleSubmit}>
@@ -82,7 +82,7 @@ const AuthPage = () => {
           )}
           <button
             type="submit"
-            className="w-full p-3 bg-purple-800 hover:bg-purple-700 rounded-md"
+            className="w-full p-3 bg-[#20211a] hover:bg-[#323232] rounded-md"
           >
             {isLogin ? "Login" : "Sign Up"}
           </button>
@@ -90,7 +90,7 @@ const AuthPage = () => {
         <p className="mt-4 text-center">
           {isLogin ? "Don't have an account?" : "Already have an account?"}{" "}
           <button
-            className="text-purple-500 hover:underline"
+            className="text-black hover:underline"
             onClick={() => setIsLogin(!isLogin)}
           >
             {isLogin ? "Sign Up" : "Login"}
