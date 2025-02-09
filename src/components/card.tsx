@@ -31,8 +31,10 @@ const LoanCard: React.FC<LoanCardProps> = ({
       </div>
 
       {/* Loan Details */}
-      <h2 className="text-2xl font-bold text-center mt-4">{name}</h2>
-      <p className="text-center text-gray-300">{description}</p>
+      <h2 className="text-2xl text-gray-800 font-bold text-center mt-4">
+        {name}
+      </h2>
+      <p className="text-center text-gray-700">{description}</p>
 
       {/* Loan Info */}
       <div className="mt-4 space-y-2">
@@ -49,8 +51,11 @@ const LoanCard: React.FC<LoanCardProps> = ({
 
       {/* Apply Button */}
       <div className="mt-6 text-center">
-        <button className="px-6 py-2 bg-white text-black font-semibold rounded-lg shadow-md hover:bg-gray-200">
-          Apply Now
+        <button className="px-6 py-2 mx-4 my-4 bg-white text-black font-semibold rounded-lg shadow-md hover:bg-gray-900 hover:text-white">
+          Select
+        </button>
+        <button className="px-6 py-2 bg-gray-500 text-black font-semibold rounded-lg shadow-md hover:bg-gray-200">
+          Explore
         </button>
       </div>
     </div>
